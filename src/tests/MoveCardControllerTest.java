@@ -53,7 +53,8 @@ public class MoveCardControllerTest {
 
 		assertEquals(initialOriginStackSize - 1, wasteGameStackMock.size());
 		assertEquals(initialTargetStackSize + 1, foundationTargetStack.size());
-		assertEquals(cardToMove, foundationTargetStack.pop());
+		assertEquals(cardToMove.getSuit(), foundationTargetStack.peek().getSuit());
+		assertEquals(cardToMove.getNumber(), foundationTargetStack.peek().getNumber());
 	}
 
 	@Test
@@ -74,7 +75,8 @@ public class MoveCardControllerTest {
 
 		assertEquals(initialOriginStackSize - 1, wasteGameStackMock.size());
 		assertEquals(initialTargetStackSize + 1, foundationTargetStack.size());
-		assertEquals(cardToMove, foundationTargetStack.pop());
+		assertEquals(cardToMove.getSuit(), foundationTargetStack.peek().getSuit());
+		assertEquals(cardToMove.getNumber(), foundationTargetStack.peek().getNumber());
 	}
 
 	@Test(expected = NotAllowedMoveException.class)

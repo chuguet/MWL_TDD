@@ -10,4 +10,14 @@ public class Card {
 		return true;
 	}
 
+	public CardSuit getSuit() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int getNumber() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
