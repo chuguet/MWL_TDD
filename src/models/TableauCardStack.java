@@ -1,7 +1,21 @@
 package models;
 
-import java.util.Stack;
+public class TableauCardStack extends CardStack {
 
-public class TableauCardStack extends Stack<Card>{
+	private static final long serialVersionUID = 1L;
 
+	@Override
+	public boolean pushAllowed(Card card) {
+
+		if (this.isEmpty() && card.getNumber() == 13) {
+			return true;
+		}
+		if (!this.isEmpty()
+				&& card.getSuit().isAlternativeColor(this.peek().getSuit())
+				&& card.getNumber() == this.peek().getNumber() - 1) {
+			return true;
+		}
+
+		return false;
+	}
 }

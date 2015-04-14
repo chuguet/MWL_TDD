@@ -1,7 +1,14 @@
 package models;
 
-import java.util.Stack;
+public class WasteCardStack extends CardStack {
 
-public class WasteCardStack extends Stack<Card> {
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	public boolean pushAllowed(Card card) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 
 }
