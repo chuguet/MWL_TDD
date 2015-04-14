@@ -29,8 +29,24 @@ public class MoveCardController {
 	}
 
 	public void move(WasteCardStack wasteGameStackMock,
-			TableauCardStack foundationTargetStack) {
-		// TODO Auto-generated method stub
-		
+			TableauCardStack foundationTargetStack)
+			throws NotAllowedMoveException {
+		if (foundationTargetStack.isEmpty()) {
+			if (wasteGameStackMock.peek().getNumber() == 13) {
+				Card cardToMove = wasteGameStackMock.pop();
+				foundationTargetStack.push(cardToMove);
+			} else {
+				throw new NotAllowedMoveException();
+			}
+		} else if (wasteGameStackMock.peek().getSuit()
+				.isAlternativeColor(foundationTargetStack.peek().getSuit())
+				&& (wasteGameStackMock.peek().getNumber() == foundationTargetStack
+						.peek().getNumber() - 1)) {
+			Card cardToMove = wasteGameStackMock.pop();
+			foundationTargetStack.push(cardToMove);
+		} else {
+			throw new NotAllowedMoveException();
+		}
+
 	}
 }
