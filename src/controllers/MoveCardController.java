@@ -3,6 +3,7 @@ package controllers;
 import exceptions.NotAllowedMoveException;
 import models.Card;
 import models.FoundationCardStack;
+import models.TableauCardStack;
 import models.WasteCardStack;
 
 public class MoveCardController {
@@ -25,5 +26,11 @@ public class MoveCardController {
 		} else {
 			throw new NotAllowedMoveException();
 		}
+	}
+
+	public void move(WasteCardStack wasteGameStackMock,
+			TableauCardStack foundationTargetStack) {
+		// TODO Auto-generated method stub
+		
 	}
 }
