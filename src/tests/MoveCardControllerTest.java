@@ -35,7 +35,8 @@ public class MoveCardControllerTest {
 	}
 
 	@Test
-	public void moveCardFromWasteToFoundationsTest() {
+	public void moveCardFromWasteToFoundationsTest()
+			throws NotAllowedMoveException {
 
 		Card cardToMove = new Card(CardSuit.HEARTS, 2, true);
 
@@ -53,12 +54,15 @@ public class MoveCardControllerTest {
 
 		assertEquals(initialOriginStackSize - 1, wasteGameStackMock.size());
 		assertEquals(initialTargetStackSize + 1, foundationTargetStack.size());
-		assertEquals(cardToMove.getSuit(), foundationTargetStack.peek().getSuit());
-		assertEquals(cardToMove.getNumber(), foundationTargetStack.peek().getNumber());
+		assertEquals(cardToMove.getSuit(), foundationTargetStack.peek()
+				.getSuit());
+		assertEquals(cardToMove.getNumber(), foundationTargetStack.peek()
+				.getNumber());
 	}
 
 	@Test
-	public void moveCardFromWasteToFoundationsTest_AceCard() {
+	public void moveCardFromWasteToFoundationsTest_AceCard()
+			throws NotAllowedMoveException {
 
 		Card cardToMove = new Card(CardSuit.HEARTS, 1, true);
 
@@ -75,12 +79,15 @@ public class MoveCardControllerTest {
 
 		assertEquals(initialOriginStackSize - 1, wasteGameStackMock.size());
 		assertEquals(initialTargetStackSize + 1, foundationTargetStack.size());
-		assertEquals(cardToMove.getSuit(), foundationTargetStack.peek().getSuit());
-		assertEquals(cardToMove.getNumber(), foundationTargetStack.peek().getNumber());
+		assertEquals(cardToMove.getSuit(), foundationTargetStack.peek()
+				.getSuit());
+		assertEquals(cardToMove.getNumber(), foundationTargetStack.peek()
+				.getNumber());
 	}
 
 	@Test(expected = NotAllowedMoveException.class)
-	public void moveCardFromWasteToFoundationsTest_notAllowed_notEqualSuit() {
+	public void moveCardFromWasteToFoundationsTest_notAllowed_notEqualSuit()
+			throws NotAllowedMoveException {
 
 		Card cardToMove = new Card(CardSuit.HEARTS, 2, true);
 
@@ -96,7 +103,8 @@ public class MoveCardControllerTest {
 	}
 
 	@Test(expected = NotAllowedMoveException.class)
-	public void moveCardFromWasteToFoundationsTest_notAllowed_nonConsecutiveCard() {
+	public void moveCardFromWasteToFoundationsTest_notAllowed_nonConsecutiveCard()
+			throws NotAllowedMoveException {
 
 		Card cardToMove = new Card(CardSuit.HEARTS, 3, true);
 

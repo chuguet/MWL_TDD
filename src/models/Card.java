@@ -1,9 +1,13 @@
 package models;
 
 public class Card {
+	
+	private int number;
+	private CardSuit suit;
 
 	public Card(CardSuit hearts, int i, boolean covered) {
-		// TODO Auto-generated constructor stub
+		this.number = i;
+		this.suit = hearts;
 	}
 
 	public boolean uncovered() {
@@ -11,13 +15,11 @@ public class Card {
 	}
 
 	public CardSuit getSuit() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.suit;
 	}
 
 	public int getNumber() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.number;
 	}
 
 }
