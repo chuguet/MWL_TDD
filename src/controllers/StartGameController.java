@@ -3,6 +3,8 @@ package controllers;
 import java.util.ArrayList;
 import java.util.Stack;
 
+import models.Card;
+
 public class StartGameController {
     public int sizeWaste() {
         // TODO Auto-generated method stub
@@ -31,4 +33,6 @@ public class StartGameController {
         // TODO Auto-generated method stub
         return null;
     }
+    
+    
 }
