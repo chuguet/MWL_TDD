@@ -59,7 +59,7 @@ public class MoveCardControllerTest {
 	@Test
 	public void moveCardFromWasteToFoundationsTest_AceCard() {
 
-		Card cardToMove = new Card(CardSuit.HEARTS, 2, true);
+		Card cardToMove = new Card(CardSuit.HEARTS, 1, true);
 
 		wasteGameStackMock.push(new Card(CardSuit.DIAMONDS, 6, true));
 		wasteGameStackMock.push(new Card(CardSuit.SPADES, 11, true));
@@ -74,6 +74,7 @@ public class MoveCardControllerTest {
 
 		assertEquals(initialOriginStackSize - 1, wasteGameStackMock.size());
 		assertEquals(initialTargetStackSize + 1, foundationTargetStack.size());
+		assertEquals(cardToMove, foundationTargetStack.pop());
 	}
 
 	@Test(expected = NotAllowedMoveException.class)
