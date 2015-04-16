@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Card;
 import models.CardStack;
 import models.DeckCardStack;
 import models.WasteCardStack;
@@ -17,7 +18,17 @@ public class MoveCardController {
 	}
 
 	public void moveMulti(DeckCardStack originCardStack,
-			WasteCardStack targetCardStack) {
-		
+			WasteCardStack targetCardStack) throws NotAllowedMoveException {
+		if (originCardStack.isEmpty()) {
+			throw new NotAllowedMoveException();
+		} else {
+			int cardsNumberToMove = 3;
+			while (cardsNumberToMove > 0 && !originCardStack.isEmpty()) {
+				Card cardToMove = originCardStack.pop();
+				cardToMove.setUncovered(true);
+				targetCardStack.push(cardToMove);
+				cardsNumberToMove--;
+			}
+		}
 	}
 }

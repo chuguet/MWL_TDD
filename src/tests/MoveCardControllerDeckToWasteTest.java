@@ -41,7 +41,7 @@ public class MoveCardControllerDeckToWasteTest {
 
 		moveCardController.moveMulti(deckCardStackMock, wasteCardStack);
 
-		assertEquals(initialOriginStackSize - 3, wasteCardStack.size());
+		assertEquals(initialOriginStackSize - 3, deckCardStackMock.size());
 		assertEquals(initialTargetStackSize + 3, wasteCardStack.size());
 
 		Card fromWasteCard1 = wasteCardStack.pop();
@@ -72,7 +72,7 @@ public class MoveCardControllerDeckToWasteTest {
 
 		moveCardController.moveMulti(deckCardStackMock, wasteCardStack);
 
-		assertEquals(initialOriginStackSize - 1, wasteCardStack.size());
+		assertEquals(initialOriginStackSize - 1, deckCardStackMock.size());
 		assertEquals(initialTargetStackSize + 1, wasteCardStack.size());
 
 		Card fromWasteCard1 = wasteCardStack.pop();
