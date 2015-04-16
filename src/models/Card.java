@@ -12,6 +12,9 @@ public class Card {
 		this.uncovered = uncovered;
 	}
 	
+	public Card() {
+	}
+
 	public void setUncovered (boolean uncovered){
 		this.uncovered = uncovered;
 	}
