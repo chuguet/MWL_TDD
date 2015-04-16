@@ -1,6 +1,8 @@
 package controllers;
 
 import models.CardStack;
+import models.DeckCardStack;
+import models.WasteCardStack;
 import exceptions.NotAllowedMoveException;
 
 public class MoveCardController {
@@ -12,5 +14,10 @@ public class MoveCardController {
 		} else {
 			throw new NotAllowedMoveException();
 		}
+	}
+
+	public void moveMulti(DeckCardStack originCardStack,
+			WasteCardStack targetCardStack) {
+		
 	}
 }
